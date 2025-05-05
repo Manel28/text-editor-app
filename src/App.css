@@ -116,3 +116,13 @@ body {
   border-radius: 4px;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
+.rich-editor {
+  height: 100%;
+  width: 100%;
+}
+
+.ql-container {
+  height: 400px !important;
+  font-family: 'Segoe UI', sans-serif;
+}
+
