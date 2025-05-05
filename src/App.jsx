@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 import FileList from './components/FileList'
 import TextEditor from './components/TextEditor'
 
@@ -33,6 +34,17 @@ function App() {
       setContent("")
     }
   }
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault()
+        handleSave()
+      }
+    }
+  
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [handleSave, selectedFile, content])
   
 
   return (
