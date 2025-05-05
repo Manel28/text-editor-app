@@ -1,42 +1,118 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Reset & base */
+html, body, #root, .app-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Container principal */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.card {
-  padding: 2em;
+/* Header */
+.header {
+  width: 100%;
+  height: 64px;
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.read-the-docs {
-  color: #888;
+.header-title {
+  font-weight: bold;
+}
+
+.header-title span {
+  margin-left: 15px;
+  font-weight: normal;
+  font-style: italic;
+  color: #ccc;
+}
+
+.header-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3c3c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.header-buttons button:hover:enabled {
+  background-color: #5a5a5a;
+}
+
+/* Main layout */
+.main {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #f2f2f2;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.editor-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.file-list li {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.file-list li:hover {
+  background-color: #e0e0e0;
+}
+.text-editor {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: Consolas, 'Courier New', monospace;
+  background-color: #ffffff;
+  color: #222;
+  resize: none;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
